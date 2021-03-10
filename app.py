@@ -23,7 +23,6 @@ def index():
 def upload_files():
     uploaded_file = request.files['file']
     filename = secure_filename(uploaded_file.filename)
-    print("hekko")
     results = []
     if filename != '':
         path = Path()
