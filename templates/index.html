@@ -1,0 +1,22 @@
+<html>
+   <body>
+      <form action = "http://localhost:5000/" method = "POST" 
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+      </form>
+      
+      
+      <div class="Results">
+         <b>Results</b>
+
+         {% for result in results %}
+
+            <li>
+            {{result}} 
+            </li>
+            {% endfor %}
+         </div>    
+    
+   </body>
+</html>
