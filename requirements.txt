@@ -4,4 +4,4 @@ voila
 fastai
 pillow
 packaging
-ipywidgets
+ipywidgets==7.6.3         
