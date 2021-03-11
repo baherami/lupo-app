@@ -11,6 +11,9 @@ app = Flask(__name__)
 app.logger.addHandler(logging.StreamHandler(sys.stdout))
 app.logger.setLevel(logging.ERROR)
 
+global learn_inf
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -28,6 +31,5 @@ def upload_files():
     
 if __name__ == '__main__':
    learn_inf = load_infer()
-
    app.run(debug = False)
 
