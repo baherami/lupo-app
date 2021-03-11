@@ -29,9 +29,8 @@ def upload_files():
     for idx,label in enumerate(learn_inf.dls.vocab):
         results.append(f"category: {label}, prediction: {prediction[idx]}, probablity: {probability[idx]:.2f}")
     print(results)
-        
     return render_template('index.html', results=results)
     
 if __name__ == '__main__':
-   app.run(debug = True)
+   app.run(debug = False)
 
