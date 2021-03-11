@@ -19,7 +19,6 @@ def index():
 def upload_files():
     uploaded_file = request.files['file']
     results = []
-    learn_inf = load_infer()
     img = PILImage.create(uploaded_file)
     labels, prediction, probability = learn_inf.predict(img)
     for idx,label in enumerate(learn_inf.dls.vocab):
@@ -28,5 +27,7 @@ def upload_files():
     return render_template('index.html', results=results)
     
 if __name__ == '__main__':
+   learn_inf = load_infer()
+
    app.run(debug = False)
 
