@@ -1,0 +1,6 @@
+torch==1.7.1
+packaging
+fastai==2.2.5
+Flask==1.1.2
+Pillow==8.1.2
+gunicorn
