@@ -23,8 +23,7 @@ def upload_files():
     global learn_inf
     labels, prediction, probability = learn_inf.predict(img)
     for idx,label in enumerate(learn_inf.dls.vocab):
-        results.append(f"category: {label}, prediction: {prediction[idx]}, probablity: {probability[idx]:.2f}")
-    print(results)
+        results.append([label, prediction[idx],f"{probability[idx]:.2f}"])
     return render_template('index.html', results=results)
 
 def parent_label_multi(o):
@@ -34,6 +33,5 @@ if __name__ == '__main__':
     path = Path()
     global learn_inf
     learn_inf = load_learner(path/'invasive_plants_II/fmodel.pkl', cpu=True)
-    print("in maain")  
     port = int(os.environ.get('PORT', 5000))
     app.run(host = '0.0.0.0', port = port)
