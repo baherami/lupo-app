@@ -3,10 +3,8 @@
 from flask import Flask, render_template, request, redirect, url_for, abort
 from fastai.vision.all import *
 import logging
+from learner_utils import parent_label_multi 
 
-
-def parent_label_multi(o):
-    return [Path(o).parent.name]
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
