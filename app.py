@@ -2,12 +2,15 @@
 
 from flask import Flask, render_template, request, redirect, url_for, abort
 from fastai.vision.all import *
+import logging
 
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024
 app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
 app.config['UPLOAD_PATH'] = 'uploads'
 
+app.logger.addHandler(logging.StreamHandler(sys.stdout))
+app.logger.setLevel(logging.ERROR)
 def parent_label_multi(o):
     return [Path(o).parent.name]
 
